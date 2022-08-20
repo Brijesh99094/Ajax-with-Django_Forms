@@ -1,0 +1,42 @@
+{% extends "ajax_template/main.html" %}
+{% block content %}
+<div class="col-lg-8 border border-succes rounded p-4 m-4 mx-auto">
+<ul class="nav nav-tabs " id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Add Books</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false" onclick="ShowAllBooks();">Show Books</button>
+    </li>
+  </ul>
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+        
+        <div class="col-lg-5 border border-info rounded mx-auto p-3 m-3" >
+            <h2>Add books</h2>
+            <span id="result" ></span>
+            <div class="form-group">
+                <label  for="name"> Book name</label>
+                <input type="text" class="form-control" id="book_name" > <span id="bname" ></span>
+            </div>
+            <div class="form-group">
+                <label for="price"> Price</label>
+                <input type="number" name="price" class="form-control" id="price" ><span id="pprice" ></span>
+            </div>
+            <div class="form-group">
+                <label for="pages"> Pages</label>
+                <input type="number" name="pages" class="form-control" id="pages" ><span id="ppages" ></span>
+            </div>
+            <div class="form-group mt-3">
+                <button class="form-control btn btn-success" id="saveBook"> Save</button>
+            </div>
+        </div>
+
+    </div>
+    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+        Show Books
+    </div>
+  </div>
+</div>
+
+{% endblock %}
